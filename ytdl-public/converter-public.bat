@@ -25,7 +25,7 @@ if exist "*.wav" goto convertwav
 exit
 
 :PROMPTm4a
-if exists "*.m4a" goto convertm4a
+if exist "*.m4a" goto convertm4a
 exit
 
 :convertm4a
