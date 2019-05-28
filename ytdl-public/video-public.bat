@@ -1,8 +1,8 @@
 %echo off
-cls
 set /p URL=URL:
-youtube-dl -F --ignore-config %URL%
+youtube-dl --ignore-config -F %URL%
 set /p FORMAT=FORMAT:
-youtube-dl --newline --no-mtime -i -o %(title)s.%(ext)s -f %FORMAT% --audio-quality 0 --ignore-config %URL%
-%SystemRoot%\explorer.exe %cd%
+youtube-dl --no-mtime -i -o %%(title)s.%%(ext)s -f %FORMAT% --ignore-config %URL%
+# %SystemRoot%\explorer.exe %cd%
+pause
 exit
