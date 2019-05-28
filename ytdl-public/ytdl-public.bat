@@ -1,5 +1,4 @@
 @echo off
-cls
 choice /n /c:123 /m "Single Url [1] // Multiple Urls [2] // Exit [3]"
 if errorlevel 3 goto exit
 if errorlevel 2 goto mult
