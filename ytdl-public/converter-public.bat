@@ -30,27 +30,23 @@ exit
 :convertm4a
 if not exist "OGG" mkdir OGG
 for %%a in ("*.m4a) do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
-pause
-%SystemRoot%\explorer.exe "OGG"
+start "OGG"
 exit
 
 :convertwav
 if not exist "OGG" mkdir OGG
 for %%a in ("*.wav") do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
-pause
-%SystemRoot%\explorer.exe "OGG"
+start "OGG"
 exit
 
 :convertmp3
 if not exist "OGG" mkdir OGG
 for %%a in ("*.flac") do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
-pause
-%SystemRoot%\explorer.exe "OGG"
+start "OGG"
 exit
 
 :convertflac
 if not exist "OGG" mkdir OGG
 for %%a in ("*.mp3") do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
-pause
-%SystemRoot%\explorer.exe "OGG"
+start "OGG"
 exit
