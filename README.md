@@ -2,8 +2,8 @@
 ytdl-batch is what the name implies, they are batch files to facilitate my use of youtube-dl and FFmpeg.
 
 ## Features
-* Music downloader batch using youtube-dl
-* OGG converter batch using FFmpeg
+* Music/Video downloader
+* OGG converter
 * More or less to come!
 
 ## Downloads
