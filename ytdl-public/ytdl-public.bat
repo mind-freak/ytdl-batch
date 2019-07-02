@@ -6,7 +6,9 @@ if errorlevel 1 goto sing
 :sing
 set /p URL=URL:
 youtube-dl --newline --no-mtime -i -o "%%(title)s.%%(ext)s" -x --audio-format vorbis --audio-quality 0 --ignore-config %URL%
-goto opendir
+choice /n /c:yn /m "Another process [Y/N]"
+if errorlevel 2 goto opendir
+if errorlevel 1 goto sing
 
 :mult
 if not exist "list.txt" echo # Paste your URLs below with each URL on a line, then save it and go back to the prompt. >> "list.txt"
