@@ -30,11 +30,11 @@ goto 404
 
 :convertothr
 if not exist "OGG" mkdir OGG
-for %%a in ("*.%FORMAT%) do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
+for %%a in ("*.%FORMAT%") do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
 goto opendir
 :convertm4a
 if not exist "OGG" mkdir OGG
-for %%a in ("*.m4a) do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
+for %%a in ("*.m4a") do ffmpeg -i "%%a" -c:a libvorbis "OGG/%%~na.ogg"
 goto opendir
 :convertwav
 if not exist "OGG" mkdir OGG
