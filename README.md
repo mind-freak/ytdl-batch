@@ -1,18 +1,20 @@
-# youtube-dl batch - making my life easier for Windows
-ytdl-batch is what the name implies, they are batch files to facilitate my use of youtube-dl and FFmpeg.
+# ytdl-batch - making my life easier for Windows
+Batch files to download one or multiple musics/videos using youtube-dl and convert multiple audio files(to .ogg) using FFmpeg.
+More or less to come!
 
-## Features
-* Music/Video downloader
-* OGG converter
-* More or less to come!
-
-## Downloads
-* [ytdl-batch](https://github.com/mind-freak/ytdl-batch/releases)
+## Requirements
+* Windows (if you manage to make this work on other OS then props to you)
 * [youtube-dl](https://ytdl-org.github.io/youtube-dl/download.html)
 * [FFmpeg](https://ffmpeg.zeranoe.com/builds/)
 
 ### Installing
-Just put all the required programs in one folder and you're done! You can start using the batch whenever you want, for more convenience create a shortcut of the batch to your desktop for even easier access.
+Just put all the required programs(youtube-dl.exe and FFmpeg & FFprob) in one folder and you're done! You can start using the batch whenever you want, for more convenience create a shortcut of the bat file to your desktop for even easier access.
+
+## Usage
+It's very easy and straightforward. For downloading musics/videos open ytdl-public.bat and select the option you desire by pressing the number displayed next to it.
+To paste the URL you can use Ctrl + V, if that doesn't work, you can right click and select paste, if that also doesn't work, right click on the CMD window tab, go in edit and paste.
+
+For converting audio files(to .ogg) you need converter-public.bat to be in the same folder of the files you want to convert, carefull, all audio with the same format will be converted, now open the bat file and select the option you desire by pressing the number displayed next to it.
 
 ## License
 ytdl-batch is licensed under the GPLv3.
