@@ -1,2 +1,0 @@
-# Here are saved the default conversion format, you can change it manually here.
-FORMAT=vorbis
