@@ -15,8 +15,8 @@ To paste the URL you can use Ctrl+V, if that doesn't work, you can right click a
 
 For converting audio files(to .ogg) you need converter-public.bat to be in the same folder of the files you want to convert, carefull, all audio with the same format will be converted, now open the bat file and select the option you desire by pressing the number displayed next to it.
 
-### semicolon
 I advise to always keep youtube-dl.exe updated, you can update it using the ytdl-public.bat or manually with --update in the cmd.
+
 More or less features to come!
 
 ## License
