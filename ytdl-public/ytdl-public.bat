@@ -1,7 +1,7 @@
 @echo off
 :start
 for /f "delims= skip=1" %%x in (config.txt) do (set "%%x")
-choice /n /c:1234 /m "Single Url [1] // Multiple Urls [2] // Change Default Format [3] // Update [4] // Exit [5]"
+choice /n /c:12345 /m "Single Url [1] // Multiple Urls [2] // Change Default Format [3] // Update [4] // Exit [5]"
 if errorlevel 5 exit
 if errorlevel 4 goto updt
 if errorlevel 3 goto form
@@ -31,15 +31,17 @@ if "%FORMAT%" neq "aac" if "%FORMAT%" neq "flac" if "%FORMAT%" neq "mp3" if "%FO
 goto form404)
 (echo # Here are saved the default conversion format, you can change it manually here.
 echo FORMAT=%FORMAT%) > config.txt
+echo DEFAULT FORMAT CHANGED SUCCESSFULY
 goto start
 
 :updt
-echo Checking current version
+echo Current version is ...
 youtube-dl --version
-echo Updating
+echo Checking for updates ...
 youtube-dl -U
-echo Updated
-goto start
+echo.
+pause
+exit
 
 :opendir
 choice /n /c:yn /m "Open directory [Y/N]"
