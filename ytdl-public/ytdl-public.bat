@@ -28,7 +28,7 @@ goto opendir
 :form
 echo -- Change Default Format.
 :form404
-echo FORMAT: aac, flac, mp3, m4a, opus, vorbis, or wav.
+echo FORMATS AVAILABLE: aac, flac, mp3, m4a, opus, vorbis, or wav.
 set /p FORMAT=FORMAT:
 if "%FORMAT%" neq "aac" if "%FORMAT%" neq "flac" if "%FORMAT%" neq "mp3" if "%FORMAT%" neq "m4a" if "%FORMAT%" neq "opus" if "%FORMAT%" neq "vorbis" if "%FORMAT%" neq "wav" (echo INVALID FORMAT, TRY AGAIN
 goto form404)
