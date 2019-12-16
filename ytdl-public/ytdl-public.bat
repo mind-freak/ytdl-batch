@@ -1,7 +1,8 @@
 @echo off
+if not exist "config-ytdl.txt" (echo # Here are saved the default conversion format, you can change it manually here.
+echo FORMAT=vorbis) > config-ytdl.txt
+for /f "delims= skip=1" %%x in (config-ytdl.txt) do (set "%%x")
 :start
-echo -- Menu
-for /f "delims= skip=1" %%x in (config.txt) do (set "%%x")
 choice /n /c:12345 /m "Single URL [1] // Multiple URLs [2] // Change Default Format [3] // Update [4] // Exit [5]"
 if errorlevel 5 exit
 if errorlevel 4 goto updt
@@ -11,7 +12,7 @@ if errorlevel 1 goto sing
 :sing
 echo -- Single URL
 set /p URL=URL:
-youtube-dl --newline --no-mtime -i -o "%%(title)s.%%(ext)s" -x --audio-format %FORMAT% --audio-quality 0 --ignore-config %URL%
+youtube-dl --newline --no-mtime -i -o "%%(title)s.%%(ext)s" -x --audio-format %FORMAT% --audio-quality 0 --ignore-config "%URL%"
 choice /n /c:yn /m "Another process [Y/N]"
 if errorlevel 2 goto opendir
 if errorlevel 1 goto sing
@@ -33,7 +34,7 @@ set /p FORMAT=FORMAT:
 if "%FORMAT%" neq "aac" if "%FORMAT%" neq "flac" if "%FORMAT%" neq "mp3" if "%FORMAT%" neq "m4a" if "%FORMAT%" neq "opus" if "%FORMAT%" neq "vorbis" if "%FORMAT%" neq "wav" (echo INVALID FORMAT, TRY AGAIN
 goto form404)
 (echo # Here are saved the default conversion format, you can change it manually here.
-echo FORMAT=%FORMAT%) > config.txt
+echo FORMAT=%FORMAT%) > config-ytdl.txt
 echo DEFAULT FORMAT CHANGED SUCCESSFULY
 goto start
 
