@@ -1,9 +1,4 @@
 @echo off
-echo THIS WILL CONVERT ALL THE MUSIC FILES INSIDE
-echo THIS FOLDER TO .OGG / VORBIS TO THE FOLDER "OGG";
-echo IF "OGG" DOESN'T EXIST, IT WILL BE CREATED;
-echo FFMPEG AND THE MUSIC FILES MUST BE WITH THE CONVERTER;
-echo CHOOSE THE FILE TYPE YOU WANNA CONVERT TO OGG.
 if not exist "config-convert.txt" (echo # Here are saved the default conversion format, you can change it manually here.
 echo FORMAT=ogg) > config-convert.txt
 for /f "delims= skip=1" %%x in (config-convert.txt) do (set "%%x")
