@@ -3,7 +3,7 @@ if not exist "config-convert.txt" (echo # Here are saved the default conversion 
 echo FORMAT=ogg) > config-convert.txt
 for /f "delims= skip=1" %%x in (config-convert.txt) do (set "%%x")
 :start
-choice /n /c:1234567 /m "MP3 [1] // FLAC [2] // WAV [3] // OGG [4] // Other [5] // Change Default Format [6] // Exit [7]"
+choice /n /c:1234567 /m "MP3 [1] // FLAC [2] // WAV [3] // OGG [4] // Other [5] // Change converted format [6] // Exit [7]"
 if errorlevel 7 exit
 if errorlevel 6 goto form
 if errorlevel 5 goto PROMPTothr
