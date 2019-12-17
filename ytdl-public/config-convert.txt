@@ -1,0 +1,2 @@
+# Here are saved the default conversion format, you can change it manually here.
+FMT=ogg
