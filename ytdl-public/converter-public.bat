@@ -30,23 +30,23 @@ goto 404
 
 :convertothr
 if not exist "OGG" mkdir OGG
-for %%a in ("*.%FORMAT%") do ffmpeg -i "%%a" "OGG/%%~na.%FMT%"
+for %%a in ("*.%FORMAT%") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertogg
 if not exist "OGG" mkdir OGG
-for %%a in ("*.ogg") do ffmpeg -i "%%a" "OGG/%%~na.%FMT%"
+for %%a in ("*.ogg") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertwav
 if not exist "OGG" mkdir OGG
-for %%a in ("*.wav") do ffmpeg -i "%%a" "OGG/%%~na.%FMT%"
+for %%a in ("*.wav") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertmp3
 if not exist "OGG" mkdir OGG
-for %%a in ("*.mp3") do ffmpeg -i "%%a" "OGG/%%~na.%FMT%"
+for %%a in ("*.mp3") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertflac
 if not exist "OGG" mkdir OGG
-for %%a in ("*.flac") do ffmpeg -i "%%a" "OGG/%%~na.%FMT%"
+for %%a in ("*.flac") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 
 :form
@@ -62,9 +62,9 @@ echo DEFAULT FORMAT CHANGED SUCCESSFULY
 goto start
 
 :opendir
-choice /n /c:yn /m "Open OGG directory [Y/N]"
+choice /n /c:yn /m "Open directory [Y/N]"
 if errorlevel 2 exit
-if errorlevel 1 start %cd%\OGG
+if errorlevel 1 start %cd%\converted
 exit
 
 :404
