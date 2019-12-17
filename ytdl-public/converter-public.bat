@@ -29,23 +29,23 @@ if exist "*.%FORMAT%" goto convertothr
 goto 404
 
 :convertothr
-if not exist "OGG" mkdir OGG
+if not exist "converted" mkdir converted
 for %%a in ("*.%FORMAT%") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertogg
-if not exist "OGG" mkdir OGG
+if not exist "converted" mkdir converted
 for %%a in ("*.ogg") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertwav
-if not exist "OGG" mkdir OGG
+if not exist "converted" mkdir converted
 for %%a in ("*.wav") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertmp3
-if not exist "OGG" mkdir OGG
+if not exist "converted" mkdir converted
 for %%a in ("*.mp3") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 :convertflac
-if not exist "OGG" mkdir OGG
+if not exist "converted" mkdir converted
 for %%a in ("*.flac") do ffmpeg -i "%%a" "converted/%%~na.%FMT%"
 goto opendir
 
