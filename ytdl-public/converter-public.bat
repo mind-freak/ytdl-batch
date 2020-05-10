@@ -1,3 +1,5 @@
+:: ytdl-batch by mind-freak
+:: version 1.1
 @echo off
 if not exist "config-convert.txt" (echo # Here are saved the default conversion format, you can change it manually here.
 echo FORMAT=ogg) > config-convert.txt
