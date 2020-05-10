@@ -1,3 +1,5 @@
+:: ytdl-batch by mind-freak
+:: version 1.1
 @echo off
 :vid
 set /p URL=URL:
