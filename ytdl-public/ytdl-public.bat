@@ -1,10 +1,13 @@
+:: ytdl-batch by mind-freak
+:: version 1.1
 @echo off
 if not exist "config-ytdl.txt" (echo # Here are saved the default conversion format, you can change it manually here.
 echo FORMAT=vorbis) > config-ytdl.txt
 for /f "delims= skip=1" %%x in (config-ytdl.txt) do (set "%%x")
 :start
-choice /n /c:12345 /m "Single URL [1] // Multiple URLs [2] // Change Default Format [3] // Update [4] // Exit [5]"
-if errorlevel 5 exit
+choice /n /c:123456 /m "Single URL [1] // Multiple URLs [2] // Change Default Format [3] // Update [4] // Clean Cache [5] // Exit [6]"
+if errorlevel 6 exit
+if errorlevel 5 goto cach
 if errorlevel 4 goto updt
 if errorlevel 3 goto form
 if errorlevel 2 goto mult
@@ -45,8 +48,15 @@ youtube-dl --version
 echo Checking for updates ...
 youtube-dl -U
 echo.
-pause
 exit
+
+:cach
+echo -- Clean Cache
+youtube-dl --rm-cache-dir
+echo.
+echo -- Cache Cleaned
+pause
+goto start
 
 :opendir
 choice /n /c:yn /m "Open directory [Y/N]"
